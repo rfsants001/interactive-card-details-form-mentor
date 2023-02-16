@@ -78,7 +78,7 @@ class CreditCardForm {
     this.cardHolderName.value = cardNameValue;
     this.cardHolderSpan.textContent = cardNameValue;
     if (cardNameValue.trim() === "") {
-      this.cardHolderSpan.textContent = "Nome do Titular";
+      this.cardHolderSpan.textContent = "Cardholder Name";
     }
   }
 
@@ -235,10 +235,15 @@ class CreditCardForm {
 
   resetForm() {
     this.cardHolderName.value = "";
+    this.cardHolderSpan.textContent = "Cardholder Name";
     this.cardNumberInput.value = "";
+    this.cardNumberSpan.textContent = "0000 0000 0000 0000";
     this.cardMonthInput.value = "";
+    this.cardMonthSpan.textContent = "00";
     this.cardYearInput.value = "";
+    this.cardYearSpan.textContent = "00";
     this.cvcInput.value = "";
+    this.cvcSpan.textContent = "000";
   }
 }
 
