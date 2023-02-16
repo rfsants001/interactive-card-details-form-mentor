@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="divider">
+        <div class="cards-div">
+          <div class="card front">
+            <div class="image-card">
+              <img src="./images/card-logo.svg" alt="Card Logo" />
+            </div>
+            <div class="number-card">
+              <span id="number-card-front">0000 0000 0000 0000</span>
+            </div>
+            <div class="name-val-card">
+              <span id="card-name-front">Jane Appleseed</span>
+              <div class="span-date">
+                <span id="month-span">00</span> /
+                <span id="year-span">00</span>
+              </div>
+            </div>
+          </div>
+          <div class="card back">
+            <div class="black-line"></div>
+            <div class="number-back-card">
+              <span id="cvc-span">000</span>
+            </div>
+            <div class="detail-card">
+              <img src="./images/detail-back-card.svg" alt="infos" />
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <form id="credit-card-form" autocomplete="off">
+            <div class="input-group">
+              <div class="input">
+                <label for="cardholderName">Cardholder Name</label>
+                <input
+                  type="text"
+                  id="cardholderName"
+                  placeholder="e.g. Jane Appleseed"
+                  required
+                />
+                <div id="card-holder-name-error" class="error-message"></div>
+              </div>
+              <div class="input">
+                <label for="cardNumber">Card Number</label>
+                <input
+                  type="text"
+                  id="cardNumber"
+                  placeholder="e.g. 1234 5678 9123 0000"
+                  minlength="16"
+                  maxlength="16"
+                  required
+                />
+                <div id="card-number-error" class="error-message"></div>
+              </div>
+              <div class="input-date-cvc">
+                <div class="date">
+                  <label for="monthyear">Exp. Date (MM/YY)</label>
+                  <div class="date-val">
+                    <div class="input-date">
+                      <input type="text" id="month" placeholder="MM" required />
+                      <div id="card-month-error" class="error-message"></div>
+                    </div>
+                    <div class="input-date">
+                      <input type="text" id="year" placeholder="YY" required />
+                      <div id="card-year-error" class="error-message"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cvc">
+                  <label for="cvc">CVC</label>
+                  <input type="text" id="cvc" placeholder="e.g. 123" required />
+                  <div id="cvc-error" class="error-message"></div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" id="submit-button">Confirm</button>
+          </form>
+
+          <div id="validate">
+            <img src="./images/icon-complete.svg" alt="Complete" />
+            <h2>Thank you!</h2>
+            <p>We've added your card details</p>
+            <button type="submit" id="continue-button">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Rafael Santos</a>.
+    </div>
+    <script src="./js/credit-card.js"></script>
+  </body>
+</html>
