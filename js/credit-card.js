@@ -1,5 +1,6 @@
 class CreditCardForm {
   constructor() {
+    this.isMobileDevice = /Mobi/.test(navigator.userAgent);
     this.cardHolderName = document.getElementById("cardholderName");
     this.cardHolderSpan = document.getElementById("card-name-front");
 
@@ -22,25 +23,44 @@ class CreditCardForm {
     this.validateDiv = document.getElementById("validate");
     this.continueButton = document.getElementById("continue-button");
 
-    this.cardNumberInput.addEventListener(
-      "keydown",
-      this.handleCardNumberInput.bind(this)
-    );
+    if (this.isMobileDevice) {
+      this.cardNumberInput.addEventListener(
+        "keyup",
+        this.handleCardNumberInput.bind(this)
+      );
+      this.cardMonthInput.addEventListener(
+        "keyup",
+        this.handleCardMonthInput.bind(this)
+      );
+      this.cardYearInput.addEventListener(
+        "keyup",
+        this.handleCardYearInput.bind(this)
+      );
+      this.cvcInput.addEventListener(
+        "keyup",
+        this.handleCardCvcInput.bind(this)
+      );
+    } else {
+      this.cardNumberInput.addEventListener(
+        "keydown",
+        this.handleCardNumberInput.bind(this)
+      );
+      this.cardMonthInput.addEventListener(
+        "keydown",
+        this.handleCardMonthInput.bind(this)
+      );
+      this.cardYearInput.addEventListener(
+        "keydown",
+        this.handleCardYearInput.bind(this)
+      );
+      this.cvcInput.addEventListener(
+        "keydown",
+        this.handleCardCvcInput.bind(this)
+      );
+    }
     this.cardHolderName.addEventListener(
       "input",
       this.handleCardNameInput.bind(this)
-    );
-    this.cardMonthInput.addEventListener(
-      "keydown",
-      this.handleCardMonthInput.bind(this)
-    );
-    this.cardYearInput.addEventListener(
-      "keydown",
-      this.handleCardYearInput.bind(this)
-    );
-    this.cvcInput.addEventListener(
-      "keydown",
-      this.handleCardCvcInput.bind(this)
     );
 
     this.submitButton.addEventListener("click", (event) => {
