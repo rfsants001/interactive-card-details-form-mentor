@@ -25,19 +25,19 @@ class CreditCardForm {
 
     if (this.isMobileDevice) {
       this.cardNumberInput.addEventListener(
-        "keyup",
+        "input",
         this.handleCardNumberInput.bind(this)
       );
       this.cardMonthInput.addEventListener(
-        "keyup",
+        "input",
         this.handleCardMonthInput.bind(this)
       );
       this.cardYearInput.addEventListener(
-        "keyup",
+        "input",
         this.handleCardYearInput.bind(this)
       );
       this.cvcInput.addEventListener(
-        "keyup",
+        "input",
         this.handleCardCvcInput.bind(this)
       );
     } else {
